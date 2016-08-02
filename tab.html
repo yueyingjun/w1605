@@ -34,6 +34,7 @@
     <script>
 
      $(function(){
+
         $("a").click(function(){
                 var index=$("a").index(this);
                 $(".list").css({display:"none"});
@@ -46,12 +47,17 @@
              width:200,height:200,border:"1px solid red"
          });
 
-         alert($($("div")).length);
+         //alert($($("div")).length);
+
+         alert($(".tab").selector);
+         alert($("#tab").selector)
      })
+
+
     </script>
 </head>
 <body>
-   <div class="tab">
+   <div class="tab" id="tab">
        <div class="title" >
            <a href="javascript:;" style="background:red">1</a>
            <a href="javascript:;">2</a>

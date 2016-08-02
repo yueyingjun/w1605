@@ -26,9 +26,7 @@ function jquery(selector){
             this.length=1;
       }
   }else if(typeof selector=="function"){
-      window.onload=function(){
-          selector()
-      }
+     this.ready(selector);
   }else if(typeof  selector=="object"&&selector.nodeType==1){
       this[0]=selector;
       this.length=1;
@@ -38,6 +36,9 @@ function jquery(selector){
 }
 
 jquery.prototype={
+    size:function(){
+        return this.length;
+    },
     getClass:function(classname,context){
             var  context=context||document;
             if(context.getElementsByClassName){
@@ -112,6 +113,14 @@ jquery.prototype={
     append:function(parent){
       parent.appendChild(this[0]);
         return this;
+    },
+    ready:function(selector){
+        window.onload=function(){
+            selector()
+        }
+    },
+    get:function(num){
+        return this[num];
     }
 
 }
@@ -119,6 +128,9 @@ jquery.prototype={
 function $(selector){
     return new jquery(selector);
 }
+
+window.jQuery=$;
+
 
 
 
