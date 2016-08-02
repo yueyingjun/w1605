@@ -32,16 +32,22 @@
     </style>
     <script src="myjquery.js"></script>
     <script>
-        window.onload=function(){
-            $("a").click(function(){
-               var index= $("a").index(this);
-                $("a").css({background:"none"});
-                $(this).css({background:"red"})
-               $(".list").css({display:"none"});
-                $(".list").eq(index).css({display:"block"});
 
-            })
-        }
+     $(function(){
+        $("a").click(function(){
+                var index=$("a").index(this);
+                $(".list").css({display:"none"});
+                $(".list").eq(index).css({display:"block"});
+                $("a").css({background:"none"});
+                $(this).css({background:"red"});
+        })
+
+         $("<div>").append(document.body).html(1).css({
+             width:200,height:200,border:"1px solid red"
+         });
+
+         alert($($("div")).length);
+     })
     </script>
 </head>
 <body>
