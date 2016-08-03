@@ -35,7 +35,7 @@ function jquery(selector){
   }
 }
 
-jquery.prototype={
+jquery.fn=jquery.prototype={
     size:function(){
         return this.length;
     },
@@ -121,15 +121,22 @@ jquery.prototype={
     },
     get:function(num){
         return this[num];
+    },
+    extend:function(obj){
+      for(var i in obj){
+        jquery.fn[i]=obj[i];
+      }
     }
-
 }
 
 function $(selector){
+
     return new jquery(selector);
 }
 
 window.jQuery=$;
+
+
 
 
 

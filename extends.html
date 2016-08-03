@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+      /*对对象拓展*/
+
+
+
+
+
+      /*
+      * 1. 深拷贝
+      * 2. 浅拷贝
+      *
+      * 传值  传址
+      *
+      *
+       */
+      var  zhangsan={name:"zhangsan",age:12,son:{name:"xiaozhangsan",sex:"boy"}};
+
+      var lisi=extend(zhangsan);
+          lisi.name="lisi";
+          lisi.son.name="xiaolisi";
+      console.log(zhangsan.name);
+      console.log(zhangsan.son.name);
+
+
+
+         function extend(obj){
+            var newobj={};
+            for(var i in obj){
+                if(typeof obj[i]=="object"){
+                    newobj[i]=extend(obj[i]);
+                }else {
+                    newobj[i] = obj[i];
+                }
+            }
+             return newobj;
+         }
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
