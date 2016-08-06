@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;height:200px;
+            position: absolute;
+            left:0;top:0;right:0;bottom: 0;
+            margin: auto;
+            border:1px solid #000;
+        }
+        .box .title{
+            width:100%;height:30px;
+            text-align: center;
+            line-height:30px ;
+            background: #ccc;
+        }
+        .box .con{
+            line-height: 30px;
+            text-align: center;
+            width:100%;height:170px;
+        }
+        span{
+            color:red;font-weight: bold;
+        }
+    </style>
+    <script src="../jquery.js"></script>
+    <script>
+         $(function(){
+             var num=5;
+             setInterval(function(){
+                 num--;
+                 if(num==0){
+                     location.href="table.php";
+                 }else{
+                     $("span").html(num);
+                 }
+             },1000)
+         })
+    </script>
+</head>
+<body>
+   <div class="box">
+       <div class="title">
+           提示
+       </div>
+       <div class="con">
+            操作成功<br>
+           <span>5</span>后返回指定页面<br>
+           没有跳转,请点击<a href="table.php">这里</a>
+
+       </div>
+   </div>
+</body>
+</html>
