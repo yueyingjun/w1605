@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="ajax.js"></script>
+    <script>
+        window.onload=function() {
+            var btn1=document.getElementsByTagName("input")[0];
+            var tbody=document.getElementsByTagName("tbody")[0];
+            btn1.onclick = function () {
+                ajax({
+                    url:"1.php",
+                    dataType:"json",
+                    success:function(data){
+                        var str="";
+                        for(var i=0;i<data.length;i++){
+                                str+="<tr>";
+                                  str+="<td>"+data[i].name+"</td>";
+                                  str+="<td>"+data[i].age+"</td>";
+                                  str+="<td>"+data[i].sex+"</td>";
+                                  str+="<td>"+data[i].nianji+"</td>";
+                                  str+="<td>"+data[i].class+"</td>";
+                                str+="</tr>";
+                        }
+                        tbody.innerHTML=str;
+                    }
+                })
+
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    <style>
+        .box{
+            width:200px;height:200px;
+            border:1px solid red;
+        }
+        table{
+            border:1px solid #000;
+            border-collapse: collapse;
+            width:800px;
+
+        }
+        th,td{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="btn1">
+<table>
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>年级</th>
+        <th>班级</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+</body>
+</html>
