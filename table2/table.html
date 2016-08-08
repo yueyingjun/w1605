@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <style>
+        table{
+            width:800px;margin: auto;
+            border-collapse: collapse;
+            border:1px solid #000;
+        }
+        td,th{
+            border:1px solid #000;
+            text-align: center;
+        }
+        .add{
+            width:798px;height:30px;
+            border:1px solid #000;
+            border-top:none;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            margin:auto;
+        }
+        .wait{
+            position: fixed;
+            left:0;top:0;right:0;
+            bottom: 0;
+            margin:auto;
+            border:1px solid #000;
+            display: none;
+            width:100px;height:30px;
+            text-align: center;
+            line-height:30px ;
+        }
+        /*.wait:before{*/
+            /*content: "";*/
+            /*position: absolute;*/
+            /*left:-20px;*/
+            /*top:0;*/
+            /*width:5px;height:20px;*/
+            /*background:#000;*/
+            /*animation: wait 0.5s ease infinite alternate;*/
+        /*}*/
+        /*.wait:after{*/
+            /*content: "";*/
+            /*position: absolute;*/
+            /*left:20px;*/
+            /*top:0;*/
+            /*width:5px;height:20px;*/
+            /*background:#000;*/
+            /*animation: wait 0.5s ease infinite alternate 1s;*/
+        /*}*/
+        /*@keyframes wait {*/
+            /*0%{*/
+                /*transform:scale(1,0.8);*/
+            /*}*/
+            /*100%{*/
+                /*transform:scale(1,1.5);*/
+            /*}*/
+        /*}*/
+
+
+        /*select.php*/
+    </style>
+    <script src="table.js"></script>
+</head>
+<body>
+  <table>
+      <thead>
+          <tr>
+              <th>姓名</th>
+              <th>年龄</th>
+              <th>性别</th>
+              <th>年级</th>
+              <th>班级</th>
+              <th>操作</th>
+          </tr>
+      </thead>
+      <tbody>
+      </tbody>
+  </table>
+  <div class="add">
+      +
+  </div>
+
+  <div class="wait">
+    等待
+  </div>
+</body>
+</html>
