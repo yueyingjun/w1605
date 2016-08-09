@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="<?php echo CSS_PATH.'login.css'?>">
+    <script src="<?php echo JS_PATH.'jquery.js'?>"></script>
+    <script src="<?php echo JS_PATH.'reg.js'?>"></script>
+</head>
+<body>
+
+<form action="<?php echo WEB_PATH.'?d=admin&f=addUser' ?>" method="post" url="<?php echo WEB_PATH.'?d=admin&f=checkReg' ?>">
+    <label>请注册</label>
+    <label>用户名: <input type="text" name="user"> <span class="error"></span></label>
+    <label>密 码:  <input type="password" name="pass"> <span class="error"></span></label>
+    <label> <input type="submit" value="注册" disabled></label>
+    <a href="<?php echo WEB_PATH.'?d=admin&f=login'?>">已有用户名,请登陆</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="<?php echo CSS_PATH.'login.css'?>">
+</head>
+<body>
+
+    <form action="<?php echo WEB_PATH.'?d=admin&f=loginCheck'?>" method="post">
+        <label>请登录</label>
+       <label>用户名: <input type="text" name="user"></label>
+        <label>密 码:  <input type="password" name="pass"></label>
+        <label> <input type="submit" value="登陆"></label>
+        <a href="<?php echo WEB_PATH.'?d=admin&f=reg'?>">没有用户名?请点击注册</a>
+    </form>
+</body>
+</html>

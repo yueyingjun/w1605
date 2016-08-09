@@ -1,0 +1,33 @@
+body,ul ,li{
+    padding:0;margin:0;list-style: none;
+}
+.nav{
+  width:1000px;height:30px;
+  margin:0 auto;
+  border:1px solid #ccc;
+    border-radius: 5px;
+}
+.nav a{
+    float:left;height:100%;
+    padding:0 20px;
+    text-decoration: none;
+    color:#000;line-height: 30px;
+}
+.content{
+    width:1000px;height:auto;
+    overflow: hidden;
+    margin:auto;margin-top: 20px;
+}
+
+.list{
+    width:250px;height:250px;border:1px solid #000;
+    box-sizing: border-box;
+    padding:5px;float: left;
+
+}
+.list a{
+    display: block;
+    width:240px;height:240px;
+    box-sizing: border-box;
+    border:1px solid #ccc;
+}
