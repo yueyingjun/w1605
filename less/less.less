@@ -1,0 +1,113 @@
+@import "var.less";
+  *{
+    box-sizing: border-box;
+  }
+  .container{
+    &{
+      margin:auto;
+     width:@num1*1px-300px;
+    }
+    &-fuild{
+    width: 100%;
+    }
+    &>.row{
+     width:100%;height:auto;
+      .clearfix
+    }
+    &-fuild>.row{
+      width:100%;height:auto;
+      .clearfix
+    }
+
+}
+
+
+.loop(@type:s,@i:1) when (@i<=@colNum){
+  .container>.row>.col-@{type}-@{i}{
+     width:@i/@colNum*100%;
+    float:left;
+  }
+  .container-fuild>.row>.col-@{type}-@{i}{
+    width:@i/@colNum*100%;
+    float:left;
+  }
+  .loop(@type,@i+1)
+}
+/*小屏*/
+.loop();
+.container>.row>.col-s-hide{
+  display: none;
+}
+.container-fuild>.row>.col-s-hide{
+  display: none;
+}
+/*中屏*/
+@media screen and (min-width: @num1){
+  .container{
+    width:@num1;
+  }
+  .loop(m);
+  .container>.row>.col-s-hide{
+    display: block;
+  }
+  .container>.row>.col-l-hide{
+    display: block;
+  }
+  .container>.row>.col-m-hide{
+    display: none;
+  }
+
+  .container-fuild>.row>.col-s-hide{
+    display: block;
+  }
+  .container-fuild>.row>.col-l-hide{
+    display: block;
+  }
+  .container-fuild>.row>.col-m-hide{
+    display: none;
+  }
+}
+/*大屏*/
+@media screen and (min-width: @num2){
+  .container{
+    width:@num2;
+  }
+  .loop(l);
+
+  .container>.row>.col-s-hide{
+    display: block;
+  }
+  .container>.row>.col-m-hide{
+    display: block;
+  }
+  .container>.row>.col-l-hide{
+    display: none;
+  }
+
+  .container-fuild>.row>.col-s-hide{
+    display: block;
+  }
+  .container-fuild>.row>.col-m-hide{
+    display: block;
+  }
+  .container-fuild>.row>.col-l-hide{
+    display: none;
+  }
+}
+
+
+
+.clearfix(){
+   &:before,&:after{
+     content:"";
+     display: block;
+     clear:both;
+   }
+}
+
+
+
+
+
+
+
