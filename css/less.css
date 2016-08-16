@@ -1,0 +1,373 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  margin: auto;
+  width: 600px;
+}
+.container-fuild {
+  width: 100%;
+}
+.container > .row {
+  width: 100%;
+  height: auto;
+}
+.container > .row:before,
+.container > .row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container-fuild > .row {
+  width: 100%;
+  height: auto;
+}
+.container-fuild > .row:before,
+.container-fuild > .row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/*小屏*/
+.container > .row > .col-s-1 {
+  width: 8.33333333%;
+  float: left;
+}
+.container-fuild > .row > .col-s-1 {
+  width: 8.33333333%;
+  float: left;
+}
+.container > .row > .col-s-2 {
+  width: 16.66666667%;
+  float: left;
+}
+.container-fuild > .row > .col-s-2 {
+  width: 16.66666667%;
+  float: left;
+}
+.container > .row > .col-s-3 {
+  width: 25%;
+  float: left;
+}
+.container-fuild > .row > .col-s-3 {
+  width: 25%;
+  float: left;
+}
+.container > .row > .col-s-4 {
+  width: 33.33333333%;
+  float: left;
+}
+.container-fuild > .row > .col-s-4 {
+  width: 33.33333333%;
+  float: left;
+}
+.container > .row > .col-s-5 {
+  width: 41.66666667%;
+  float: left;
+}
+.container-fuild > .row > .col-s-5 {
+  width: 41.66666667%;
+  float: left;
+}
+.container > .row > .col-s-6 {
+  width: 50%;
+  float: left;
+}
+.container-fuild > .row > .col-s-6 {
+  width: 50%;
+  float: left;
+}
+.container > .row > .col-s-7 {
+  width: 58.33333333%;
+  float: left;
+}
+.container-fuild > .row > .col-s-7 {
+  width: 58.33333333%;
+  float: left;
+}
+.container > .row > .col-s-8 {
+  width: 66.66666667%;
+  float: left;
+}
+.container-fuild > .row > .col-s-8 {
+  width: 66.66666667%;
+  float: left;
+}
+.container > .row > .col-s-9 {
+  width: 75%;
+  float: left;
+}
+.container-fuild > .row > .col-s-9 {
+  width: 75%;
+  float: left;
+}
+.container > .row > .col-s-10 {
+  width: 83.33333333%;
+  float: left;
+}
+.container-fuild > .row > .col-s-10 {
+  width: 83.33333333%;
+  float: left;
+}
+.container > .row > .col-s-11 {
+  width: 91.66666667%;
+  float: left;
+}
+.container-fuild > .row > .col-s-11 {
+  width: 91.66666667%;
+  float: left;
+}
+.container > .row > .col-s-12 {
+  width: 100%;
+  float: left;
+}
+.container-fuild > .row > .col-s-12 {
+  width: 100%;
+  float: left;
+}
+.container > .row > .col-s-hide {
+  display: none;
+}
+.container-fuild > .row > .col-s-hide {
+  display: none;
+}
+/*中屏*/
+@media screen and (min-width: 900px) {
+  .container {
+    width: 900px;
+  }
+  .container > .row > .col-m-1 {
+    width: 8.33333333%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-1 {
+    width: 8.33333333%;
+    float: left;
+  }
+  .container > .row > .col-m-2 {
+    width: 16.66666667%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-2 {
+    width: 16.66666667%;
+    float: left;
+  }
+  .container > .row > .col-m-3 {
+    width: 25%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-3 {
+    width: 25%;
+    float: left;
+  }
+  .container > .row > .col-m-4 {
+    width: 33.33333333%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-4 {
+    width: 33.33333333%;
+    float: left;
+  }
+  .container > .row > .col-m-5 {
+    width: 41.66666667%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-5 {
+    width: 41.66666667%;
+    float: left;
+  }
+  .container > .row > .col-m-6 {
+    width: 50%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-6 {
+    width: 50%;
+    float: left;
+  }
+  .container > .row > .col-m-7 {
+    width: 58.33333333%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-7 {
+    width: 58.33333333%;
+    float: left;
+  }
+  .container > .row > .col-m-8 {
+    width: 66.66666667%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-8 {
+    width: 66.66666667%;
+    float: left;
+  }
+  .container > .row > .col-m-9 {
+    width: 75%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-9 {
+    width: 75%;
+    float: left;
+  }
+  .container > .row > .col-m-10 {
+    width: 83.33333333%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-10 {
+    width: 83.33333333%;
+    float: left;
+  }
+  .container > .row > .col-m-11 {
+    width: 91.66666667%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-11 {
+    width: 91.66666667%;
+    float: left;
+  }
+  .container > .row > .col-m-12 {
+    width: 100%;
+    float: left;
+  }
+  .container-fuild > .row > .col-m-12 {
+    width: 100%;
+    float: left;
+  }
+  .container > .row > .col-s-hide {
+    display: block;
+  }
+  .container > .row > .col-l-hide {
+    display: block;
+  }
+  .container > .row > .col-m-hide {
+    display: none;
+  }
+  .container-fuild > .row > .col-s-hide {
+    display: block;
+  }
+  .container-fuild > .row > .col-l-hide {
+    display: block;
+  }
+  .container-fuild > .row > .col-m-hide {
+    display: none;
+  }
+}
+/*大屏*/
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+  .container > .row > .col-l-1 {
+    width: 8.33333333%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-1 {
+    width: 8.33333333%;
+    float: left;
+  }
+  .container > .row > .col-l-2 {
+    width: 16.66666667%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-2 {
+    width: 16.66666667%;
+    float: left;
+  }
+  .container > .row > .col-l-3 {
+    width: 25%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-3 {
+    width: 25%;
+    float: left;
+  }
+  .container > .row > .col-l-4 {
+    width: 33.33333333%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-4 {
+    width: 33.33333333%;
+    float: left;
+  }
+  .container > .row > .col-l-5 {
+    width: 41.66666667%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-5 {
+    width: 41.66666667%;
+    float: left;
+  }
+  .container > .row > .col-l-6 {
+    width: 50%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-6 {
+    width: 50%;
+    float: left;
+  }
+  .container > .row > .col-l-7 {
+    width: 58.33333333%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-7 {
+    width: 58.33333333%;
+    float: left;
+  }
+  .container > .row > .col-l-8 {
+    width: 66.66666667%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-8 {
+    width: 66.66666667%;
+    float: left;
+  }
+  .container > .row > .col-l-9 {
+    width: 75%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-9 {
+    width: 75%;
+    float: left;
+  }
+  .container > .row > .col-l-10 {
+    width: 83.33333333%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-10 {
+    width: 83.33333333%;
+    float: left;
+  }
+  .container > .row > .col-l-11 {
+    width: 91.66666667%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-11 {
+    width: 91.66666667%;
+    float: left;
+  }
+  .container > .row > .col-l-12 {
+    width: 100%;
+    float: left;
+  }
+  .container-fuild > .row > .col-l-12 {
+    width: 100%;
+    float: left;
+  }
+  .container > .row > .col-s-hide {
+    display: block;
+  }
+  .container > .row > .col-m-hide {
+    display: block;
+  }
+  .container > .row > .col-l-hide {
+    display: none;
+  }
+  .container-fuild > .row > .col-s-hide {
+    display: block;
+  }
+  .container-fuild > .row > .col-m-hide {
+    display: block;
+  }
+  .container-fuild > .row > .col-l-hide {
+    display: none;
+  }
+}
