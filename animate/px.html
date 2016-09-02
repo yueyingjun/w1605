@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas{
+            background:#ccc;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            /*
+            * 绘制图形
+            * 动画
+            * 图像的合成
+            * 像素级别处理
+            *
+            *
+            *   碰撞   矩形碰撞
+            *
+            * */
+            var canvas=document.getElementsByTagName("canvas")[0];
+            var cobj=canvas.getContext("2d");
+            var img=document.getElementsByTagName("img")[0];
+            cobj.drawImage(img,0,0);
+            var dataObj=cobj.getImageData(0,0,220,220);
+            /*
+
+            for(var i=0;i<dataObj.width*dataObj.height;i++){
+                dataObj.data[i*4]=255-dataObj.data[i*4];
+                dataObj.data[i*4+1]=255-dataObj.data[i*4+1];
+                dataObj.data[i*4+2]=255-dataObj.data[i*4+2];
+            }
+
+            cobj.putImageData(dataObj,0,0);
+            */
+
+
+            var px=5;
+            var numx=Math.ceil(220/px);
+            var numy=Math.ceil(220/px);
+            for(var i=0;i<numx;i++){
+                for(var j=0;j<numy;j++){
+                    var data=cobj.getImageData(j*px,i*px,px,px);
+                    var r=0,g=0,b=0;
+                    for(var k=0;k<data.width*data.height;k++){
+                        r+=data.data[k*4];
+                        g+=data.data[k*4+1];
+                        b+=data.data[k*4+2];
+                    }
+
+                    r=parseInt(r/(data.width*data.height));
+                    g=parseInt(g/(data.width*data.height));
+                    b=parseInt(b/(data.width*data.height));
+                    console.log(r+"-"+g+"--"+b);
+                    for(var k=0;k<data.width*data.height;k++){
+                        data.data[k*4]=r;
+                        data.data[k*4+1]=g;
+                        data.data[k*4+2]=b;
+                    }
+
+
+
+                    cobj.putImageData(data,j*px,i*px);
+
+
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+  <canvas width="500" height="500">
+
+  </canvas>
+  <img src="../imgs/chenyi.jpg" alt="" hidden>
+</body>
+</html>

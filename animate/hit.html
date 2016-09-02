@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/hitPix.js"></script>
+    <style>
+        canvas{
+            background:#ccc;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            var canvas=document.querySelector("canvas");
+            var cobj=canvas.getContext("2d");
+            function shape1(){
+                this.x=0;
+                this.y=0;
+                this.width=100;
+                this.height=100;
+                this.speed=1;
+            }
+            shape1.prototype={
+                draw:function(){
+                    cobj.save();
+                    cobj.translate(this.x,this.y);
+                    cobj.fillRect(0,0,this.width,this.height);
+                    cobj.restore();
+                },
+                update:function(){
+                    this.x+=this.speed;
+                }
+            }
+
+
+
+
+            function shape2(){
+                this.x=0;
+                this.y=0;
+                this.width=100;
+                this.height=100;
+                this.r=50;
+                this.speed=-1;
+            }
+            shape2.prototype={
+                draw:function(){
+                    cobj.save();
+                    cobj.translate(this.x,this.y);
+                    cobj.beginPath();
+                    cobj.arc(this.width/2,this.height/2,this.r,0,Math.PI*2);
+                    cobj.fill();
+                    cobj.restore();
+                },
+                update:function(){
+                    this.x+=this.speed;
+                }
+            }
+
+            var shape1Obj=new shape1();
+            shape1Obj.y=80;
+            var shape2Obj=new shape2();
+            shape2Obj.x=400
+
+
+            setInterval(function(){
+                cobj.clearRect(0,0,500,500)
+                shape1Obj.draw();
+                shape1Obj.update();
+                shape2Obj.draw();
+                shape2Obj.update();
+
+               if( hitPix(canvas,cobj,shape1Obj,shape2Obj)){
+                   console.log(1);
+               }
+
+            },60)
+
+
+        }
+    </script>
+</head>
+<body>
+<canvas width="500" height="500">
+
+</canvas>
+</body>
+</html>

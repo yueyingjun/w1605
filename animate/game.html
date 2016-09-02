@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/hitPix.js"></script>
+    <script src="js/game.js"></script>
+    <style>
+        html,body{
+            padding:0;margin:0;
+            width:100%;height:100%;
+            overflow: hidden;
+            background:#000;
+        }
+        canvas{
+          background: url(imgs/back/back.jpg) repeat-x;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            var canvas=document.querySelector("canvas");
+            var cobj=canvas.getContext("2d");
+
+            window.onresize=function() {
+                canvas.width = document.documentElement.clientWidth;
+                canvas.height = document.documentElement.clientHeight;
+            }
+            window.onresize();
+//
+//            /*程序运行*/
+            var runImg=document.querySelectorAll(".run");
+            var jumpImg=document.querySelectorAll(".jump");
+            var hinderImg=document.querySelectorAll(".hinder");
+            var gameObj=new game(canvas,cobj,runImg,jumpImg,hinderImg);
+            gameObj.play();
+
+        }
+    </script>
+</head>
+<body>
+<canvas>
+你的浏览器不支持canvas,请升级浏览器
+</canvas>
+<img src="imgs/person/run1.png" alt="" class="run" hidden>
+<img src="imgs/person/run2.png" alt="" class="run" hidden>
+<img src="imgs/person/run3.png" alt="" class="run" hidden>
+<img src="imgs/person/run4.png" alt="" class="run" hidden>
+<img src="imgs/person/run5.png" alt="" class="run" hidden>
+<img src="imgs/person/run6.png" alt="" class="run" hidden>
+<img src="imgs/person/run7.png" alt="" class="run" hidden>
+
+<img src="imgs/person/jump3.png" alt="" class="jump" hidden>
+
+
+<img src="imgs/hinder/boom.png" alt="" class="hinder" hidden>
+<img src="imgs/hinder/chick.png" alt="" class="hinder" hidden>
+<img src="imgs/hinder/egg.png" alt="" class="hinder" hidden>
+<img src="imgs/hinder/flow.png" alt="" class="hinder" hidden>
+<img src="imgs/hinder/grass.png" alt="" class="hinder" hidden>
+<img src="imgs/hinder/stone.png" alt="" class="hinder" hidden>
+<img src="imgs/hinder/tree.png" alt="" class="hinder" hidden>
+</body>
+</html>
