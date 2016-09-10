@@ -1,16 +1,25 @@
 angular.module("myapp",[])
-.controller("todo",["$scope",function($scope){
+.controller("todo",["$scope","$filter",function($scope,$filter){
     $scope.data=localStorage.messages?JSON.parse(localStorage.messages):[];
-
-
     /*当前的子内容*/
     $scope.currentId=$scope.data.length?$scope.data[0].id:null;
     $scope.currentCon=$scope.data.length?$scope.data[getIndex($scope.currentId)]:null;
 
+    /*监控 search*/
+     $scope.search="";
+    $scope.$watch("search",function(){
+        var arr=$filter("filter")($scope.data,$scope.search);
+        $scope.currentCon=$scope.data[getIndex(arr[0].id)];
+
+    })
+
+    /*开关*/
+
+    $scope.isshow=true;
 
     /*添加列表*/
     $scope.addList=function(){
-
+        $scope.isshow=true;
         var maxid=getMaxId($scope.data);
         var obj= {id:maxid+1,title:"新闻note",son:[]}
         $scope.data.push(obj);
@@ -64,6 +73,7 @@ angular.module("myapp",[])
     /*列表映射*/
 
     $scope.focus=function(id){
+        $scope.isshow=true;
         $scope.currentId=id;
         $scope.currentCon=$scope.data.length?$scope.data[getIndex($scope.currentId)]:null;
     }
@@ -96,10 +106,42 @@ angular.module("myapp",[])
     }
 
 
+    /*存储已完成的*/
+
+      $scope.success=localStorage.success?JSON.parse(localStorage.success):[];
+
+    /*存入已完成的数组*/
+    $scope.done=function(id){
+       //1.放到success
+        var index=getIndex(id,$scope.currentCon.son)
+        var obj=$scope.currentCon.son[index];
+        obj.id=getMaxId($scope.success)+1;
+        $scope.success.push(obj);
+        //2.原数组删掉
+        $scope.currentCon.son.splice(index,1);
+
+        localStorage.success=JSON.stringify($scope.success);
+        localStorage.messages=JSON.stringify($scope.data);
+
+    }
+
+
+    /*删除已完成*/
+    $scope.removeDone=function(id){
+            for(var i=0;i<$scope.success.length;i++){
+                if($scope.success[i].id==id){
+                    $scope.success.splice(i,1);
+                }
+            }
+           localStorage.success= JSON.stringify($scope.success);
+    }
 
 
 
-    /*获取最大id*/
+
+
+
+    /*获取最大ID*/
     function getMaxId(arr){
 
       if(arr.length>0) {
@@ -115,7 +157,6 @@ angular.module("myapp",[])
         return parseInt(temp) ;
     }
 
-
     /*通过ID获取下标*/
     function getIndex(id,arr){
         var arr=arr||$scope.data;
@@ -126,7 +167,5 @@ angular.module("myapp",[])
         }
 
     }
-
-
 
 }])

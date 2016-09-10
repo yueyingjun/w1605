@@ -16,21 +16,21 @@
             <!--搜索框-->
             <div class="input-group input-group-lg search">
                 <span class="input-group-addon glyphicon glyphicon-search"></span>
-                <input type="text" class="form-control" placeholder="Username">
+                <input type="text" class="form-control" placeholder="Username" ng-model="search">
             </div>
 
             <!--done-->
 
-            <div class="done">
+            <div class="done" ng-click="isshow=false">
                 <span class="glyphicon glyphicon-ok-sign"></span>
-                已完成 <span class="num">0</span>
+                已完成 <span class="num">{{success.length}}</span>
             </div>
 
             <div class="done">
                 <span class="glyphicon glyphicon-list"></span>
                 计划列表
             </div>
-            <div class="list" ng-repeat="item in data track by item.id">
+            <div class="list" ng-repeat="item in data |filter:search track by item.id">
                 <div class="listcon">
                     <input type="text" ng-model="item.title" ng-blur="blur(item.id)" ng-focus="focus(item.id)">
                     <span class="glyphicon glyphicon-trash remove" ng-click="removeList(item.id)"></span>
@@ -44,7 +44,7 @@
                添加列表
            </div>
         </div>
-        <div class="col-xs-8 col-sm-9 right">
+        <div class="col-xs-8 col-sm-9 right" ng-show="isshow">
             <div class="header">
                 <div class="title">
                     {{currentCon.title}}
@@ -56,7 +56,7 @@
             <!--内容列表-->
             <div class="list" ng-repeat="item in currentCon.son track by item.id">
                 <div class="listcon">
-                    <span class="glyphicon glyphicon-record"></span>
+                    <span class="glyphicon glyphicon-record" ng-click="done(item.id)"></span>
                     <input type="text" ng-model="item.title" ng-blur="conBlur(item.id)">
                     <span class="glyphicon glyphicon-trash remove" ng-click="removeCon(item.id)"></span>
                 </div>
@@ -64,6 +64,24 @@
 
 
         </div>
+
+         <div class="col-xs-8 col-sm-9 right" ng-show="!isshow">
+             <div class="header">
+                 <div class="title">
+                     已完成
+                 </div>
+                 <div class="add-con glyphicon glyphicon-plus" ng-click="addCon()">
+
+                 </div>
+             </div>
+             <!--内容列表-->
+             <div class="list" ng-repeat="item in success track by item.id">
+                 <div class="listcon">
+                     <span>{{item.title}}</span>
+                     <span class="glyphicon glyphicon-trash remove" ng-click="removeDone(item.id)"></span>
+                 </div>
+             </div>
+         </div>
      </div>
  </div>
  </div>
